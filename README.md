@@ -1,2 +1,7 @@
-Проект Brain-Games
-исполнитель: Сергей Ампилов
+<h1>Проект Brain-Games</h1>
+<h3>исполнитель: Сергей Ампилов</h3>
+
+
+<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+
+<a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
