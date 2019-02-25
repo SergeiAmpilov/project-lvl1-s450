@@ -6,3 +6,6 @@ start:
 
 build:
 	npx babel src --out-dir dist
+
+publish:
+	npm publish
