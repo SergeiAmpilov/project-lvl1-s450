@@ -1,6 +1,6 @@
 {
   "name": "braingamesasy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",

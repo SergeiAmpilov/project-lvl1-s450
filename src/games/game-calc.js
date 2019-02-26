@@ -29,19 +29,19 @@ const getRightAnswer = (n1, n2, operator) => {
 
 const calcGame = () => {
   const name = getGreetingAndName('What is the result of the expression?');
-
-  let rightAnswerCount = 0;
-  while (rightAnswerCount < roundCountCommon) {
+  for (let i = 0; i < roundCountCommon; i += 1) {
     const randN1 = Math.floor(Math.random() * 100);
     const randN2 = Math.floor(Math.random() * 100);
     const randOper = getRandomOperator();
+    const questionText = `${randN1} ${randOper} ${randN2}`;
+    const rightAnswerText = String(getRightAnswer(randN1, randN2, randOper));
+    const resultOfIter = gameIterator(questionText, rightAnswerText, name);
 
-    if (gameIterator(`${randN1} ${randOper} ${randN2}`, String(getRightAnswer(randN1, randN2, randOper)), name)) {
-      rightAnswerCount += 1;
-    } else {
+    if (!resultOfIter) {
       return;
     }
   }
+
   console.log(`Congratulations, ${name}!`);
 };
 
