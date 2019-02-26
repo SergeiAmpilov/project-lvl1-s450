@@ -8,7 +8,7 @@ const isEvenGame = () => {
     const randNom = Math.floor(Math.random() * 100);
 
     if (gameIterator(String(randNom), randNom % 2 === 0 ? 'yes' : 'no', name)) {
-      rightAnswerCount++;
+      rightAnswerCount += 1;
     } else {
       return;
     }

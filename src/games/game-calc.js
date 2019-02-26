@@ -37,7 +37,7 @@ const calcGame = () => {
     const randOper = getRandomOperator();
 
     if (gameIterator(`${randN1} ${randOper} ${randN2}`, String(getRightAnswer(randN1, randN2, randOper)), name)) {
-      rightAnswerCount++;
+      rightAnswerCount += 1;
     } else {
       return;
     }
