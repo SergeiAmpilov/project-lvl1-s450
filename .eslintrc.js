@@ -22,6 +22,7 @@ module.exports = {
         "babel"
     ],
     "rules": {
-      "no-console": 0
+      "no-console": 0,
+      "no-plusplus": 0
     }
 };

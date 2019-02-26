@@ -1,13 +1,14 @@
 {
   "name": "braingamesasy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
   ],
-  "description": "Проект Brain-Games\r исполнитель: Сергей Ампилов",  
+  "description": "Проект Brain-Games\r исполнитель: Сергей Ампилов",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
