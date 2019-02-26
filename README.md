@@ -13,3 +13,6 @@
 
 <h4>Игра Calk</h4>
 <a href="https://asciinema.org/a/kNOpuBGEKkn7jeRImswndo4x0" target="_blank"><img src="https://asciinema.org/a/kNOpuBGEKkn7jeRImswndo4x0.svg" /></a>
+
+<h4>Игра GCD</h4>
+<a href="https://asciinema.org/a/gJ2xfbHr7rg5lSu53EBotzCH9" target="_blank"><img src="https://asciinema.org/a/gJ2xfbHr7rg5lSu53EBotzCH9.svg" /></a>
