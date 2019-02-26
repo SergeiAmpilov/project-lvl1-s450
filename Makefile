@@ -11,7 +11,7 @@ publish:
 	npm publish
 
 lint:
-	npx eslint ./src
+	npx eslint .
 
 even:
 	npx babel-node -- src/bin/brain-even.js
