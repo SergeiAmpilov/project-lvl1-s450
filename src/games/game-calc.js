@@ -1,48 +1,50 @@
-import { roundCountCommon, getGreetingAndName, gameIterator } from '../common';
+import { cons, car, cdr } from 'hexlet-pairs';
+import { gameIteratorNew, getRandom100 } from '../common';
 
 const getRandomOperator = () => {
-  const r = Math.random();
+  const r = getRandom100();
 
-  if (r <= 0.33) {
+  if (r <= 33) {
     return '+';
   }
 
-  if (r <= 0.67) {
+  if (r <= 67) {
     return '-';
   }
 
   return '*';
 };
 
-const getRightAnswer = (n1, n2, operator) => {
-  switch (operator) {
-    case '+':
-      return n1 + n2;
-    case '-':
-      return n1 - n2;
-    case '*':
-      return n1 * n2;
-    default:
-      return 0;
-  }
-};
-
 const calcGame = () => {
-  const name = getGreetingAndName('What is the result of the expression?');
-  for (let i = 0; i < roundCountCommon; i += 1) {
-    const randN1 = Math.floor(Math.random() * 100);
-    const randN2 = Math.floor(Math.random() * 100);
-    const randOper = getRandomOperator();
-    const questionText = `${randN1} ${randOper} ${randN2}`;
-    const rightAnswerText = String(getRightAnswer(randN1, randN2, randOper));
-    const resultOfIter = gameIterator(questionText, rightAnswerText, name);
+  const greetingText = 'What is the result of the expression?';
+  const paramGenerator = () => cons(getRandomOperator(), cons(getRandom100(), getRandom100()));
 
-    if (!resultOfIter) {
-      return;
+  const gameConditionGenerator = val => (param) => {
+    const operator = car(val);
+    const n1 = car(cdr(val));
+    const n2 = cdr(cdr(val));
+
+    if (param === 'rightAnswer') {
+      switch (operator) {
+        case '+':
+          return String(n1 + n2);
+        case '-':
+          return String(n1 - n2);
+        case '*':
+          return String(n1 * n2);
+        default:
+          return 0;
+      }
     }
-  }
 
-  console.log(`Congratulations, ${name}!`);
+    if (param === 'question') {
+      return `${n1} ${operator} ${n2}`;
+    }
+
+    return 'unknown call of function';
+  };
+
+  gameIteratorNew(paramGenerator, gameConditionGenerator, greetingText);
 };
 
 export default calcGame;

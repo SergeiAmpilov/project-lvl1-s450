@@ -1,21 +1,22 @@
-import { roundCountCommon, getGreetingAndName, gameIterator } from '../common';
+import { gameIteratorNew, getRandom100 } from '../common';
 
 const isEven = n => n % 2 === 0;
 
 const isEvenGame = () => {
-  const name = getGreetingAndName('Answer "yes" if number even otherwise answer "no".');
+  const greetingText = 'Answer "yes" if number even otherwise answer "no".';
 
-  for (let i = 0; i < roundCountCommon; i += 1) {
-    const randomValue = Math.floor(Math.random() * 100);
-    const correctAnswerText = isEven(randomValue) ? 'yes' : 'no';
-    const resultOfIter = gameIterator(String(randomValue), correctAnswerText, name);
-
-    if (!resultOfIter) {
-      return;
+  const gameConditionGenerator = n => (param) => {
+    switch (param) {
+      case 'question':
+        return String(n);
+      case 'rightAnswer':
+        return isEven(n) ? 'yes' : 'no';
+      default:
+        return 0;
     }
-  }
+  };
 
-  console.log(`Congratulations, ${name}!`);
+  gameIteratorNew(getRandom100, gameConditionGenerator, greetingText);
 };
 
 export default isEvenGame;
