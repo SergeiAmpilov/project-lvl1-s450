@@ -19,3 +19,6 @@
 
 <h4>Игра Progression</h4>
 <a href="https://asciinema.org/a/cYLUELnZyuyl56cM0T03hLzaf" target="_blank"><img src="https://asciinema.org/a/cYLUELnZyuyl56cM0T03hLzaf.svg" /></a>
+
+<h4>Игра Prime</h4>
+<a href="https://asciinema.org/a/3LCNAhwXjiVNJ871Dh72UgzaO" target="_blank"><img src="https://asciinema.org/a/3LCNAhwXjiVNJ871Dh72UgzaO.svg" /></a>
