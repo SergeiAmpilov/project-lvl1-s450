@@ -9,14 +9,15 @@ const gameIteratorNew = (gameGenerator, greetingText) => {
 
   for (let i = 0; i < roundCountCommon; i += 1) {
     const game = gameGenerator();
-    const rightAnswerText = game('rightAnswer');
-    const questionText = game('question');
+    const rightAnswer = game('rightAnswer');
+    const question = game('question');
 
-    console.log(`Question: ${questionText}`);
-    const ansUser = readlineSync.question('Your answer: ');
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (ansUser !== rightAnswerText) {
-      console.log(`${ansUser} is wrong answer ;(. Correct answer was ${rightAnswerText}.\nLet's try again, ${name}!`);
+    if (userAnswer !== rightAnswer) {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
 
