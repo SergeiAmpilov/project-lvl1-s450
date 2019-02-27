@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const roundCountCommon = 3; // максимальное кол-во раундов
 
-const gameIteratorNew = (gameGenerator, greetingText) => {
+const gameIterator = (gameGenerator, greetingText) => {
   console.log(`Welcome to the Brain Games!\n${greetingText}`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
@@ -26,4 +26,4 @@ const gameIteratorNew = (gameGenerator, greetingText) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default gameIteratorNew;
+export default gameIterator;

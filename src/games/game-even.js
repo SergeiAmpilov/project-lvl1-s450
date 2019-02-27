@@ -1,4 +1,4 @@
-import gameIteratorNew from '../common';
+import gameIterator from '../common';
 import getRandom from '../utils';
 
 const isEven = n => n % 2 === 0;
@@ -20,7 +20,7 @@ const isEvenGame = () => {
     };
   };
 
-  gameIteratorNew(gameGenerator, greetingText);
+  gameIterator(gameGenerator, greetingText);
 };
 
 export default isEvenGame;

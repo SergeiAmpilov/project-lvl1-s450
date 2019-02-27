@@ -1,5 +1,5 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import gameIteratorNew from '../common';
+import gameIterator from '../common';
 import getRandom from '../utils';
 
 const getRandomOperator = () => {
@@ -47,7 +47,7 @@ const calcGame = () => {
     };
   };
 
-  gameIteratorNew(gameGenerator, greetingText);
+  gameIterator(gameGenerator, greetingText);
 };
 
 export default calcGame;
