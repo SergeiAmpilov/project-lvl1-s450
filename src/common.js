@@ -2,18 +2,10 @@ import readlineSync from 'readline-sync';
 
 const roundCountCommon = 3; // максимальное кол-во раундов
 
-const getRandom100 = () => Math.floor(Math.random() * 100);
-
-const getGreetingAndName = (greetingText = '') => {
+const gameIteratorNew = (gameGenerator, greetingText) => {
   console.log(`Welcome to the Brain Games!\n${greetingText}`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
-
-  return name;
-};
-
-const gameIteratorNew = (gameGenerator, greetingText) => {
-  const name = getGreetingAndName(greetingText);
 
   for (let i = 0; i < roundCountCommon; i += 1) {
     const game = gameGenerator();
@@ -33,6 +25,4 @@ const gameIteratorNew = (gameGenerator, greetingText) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export {
-  getGreetingAndName, gameIteratorNew, getRandom100,
-};
+export default gameIteratorNew;

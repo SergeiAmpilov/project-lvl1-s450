@@ -1,8 +1,9 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import { gameIteratorNew, getRandom100 } from '../common';
+import gameIteratorNew from '../common';
+import getRandom from '../utils';
 
 const getRandomOperator = () => {
-  const r = getRandom100();
+  const r = getRandom();
 
   if (r <= 33) {
     return '+';
@@ -19,7 +20,7 @@ const calcGame = () => {
   const greetingText = 'What is the result of the expression?';
 
   const gameGenerator = () => {
-    const randomValue = cons(getRandomOperator(), cons(getRandom100(), getRandom100()));
+    const randomValue = cons(getRandomOperator(), cons(getRandom(), getRandom()));
     const operator = car(randomValue);
     const n1 = car(cdr(randomValue));
     const n2 = cdr(cdr(randomValue));

@@ -1,10 +1,11 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import { gameIteratorNew, getRandom100 } from '../common';
+import gameIteratorNew from '../common';
+import getRandom from '../utils';
 
 const gameGcd = () => {
   const greetingText = 'Find the greatest common divisor of given numbers.';
   const gameGenerator = () => {
-    const randomValue = cons(getRandom100(), getRandom100());
+    const randomValue = cons(getRandom(), getRandom());
     return (param) => {
       const n1 = car(randomValue);
       const n2 = cdr(randomValue);

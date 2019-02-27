@@ -1,4 +1,5 @@
-import { gameIteratorNew, getRandom100 } from '../common';
+import gameIteratorNew from '../common';
+import getRandom from '../utils';
 
 const isEven = n => n % 2 === 0;
 
@@ -6,7 +7,7 @@ const isEvenGame = () => {
   const greetingText = 'Answer "yes" if number even otherwise answer "no".';
 
   const gameGenerator = () => {
-    const randomValue = getRandom100();
+    const randomValue = getRandom();
     return (param) => {
       switch (param) {
         case 'question':
