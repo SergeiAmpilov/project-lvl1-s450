@@ -4,7 +4,7 @@ import getRandom from '../utils';
 const isEven = n => n % 2 === 0;
 
 const isEvenGame = () => {
-  const greetingText = 'Answer "yes" if number even otherwise answer "no".';
+  const description = 'Answer "yes" if number even otherwise answer "no".';
 
   const gameGenerator = () => {
     const randomValue = getRandom();
@@ -20,7 +20,7 @@ const isEvenGame = () => {
     };
   };
 
-  gameIterator(gameGenerator, greetingText);
+  gameIterator(gameGenerator, description);
 };
 
 export default isEvenGame;

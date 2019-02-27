@@ -4,16 +4,16 @@ import getRandom from '../utils';
 const getProgression = (start, step, size) => {
   const progressionItem = [];
   for (let i = 0; i < size; i += 1) {
-    progressionItem[i] = i;
+    progressionItem[i] = i * step + start;
   }
 
-  return progressionItem.map((item, index) => index * step + start);
+  return progressionItem;
 };
 
 const getStringWithHiddenNomber = (items, hiddenNomberIndex) => items.map((item, index) => (index === hiddenNomberIndex ? '..' : String(item))).join(' ');
 
 const gameProgression = () => {
-  const greetingText = 'What number is missing in the progression?';
+  const description = 'What number is missing in the progression?';
 
   const gameGenerator = () => {
     const startProgressionNomber = getRandom(1, 5);
@@ -41,7 +41,7 @@ const gameProgression = () => {
   };
 
 
-  gameIterator(gameGenerator, greetingText);
+  gameIterator(gameGenerator, description);
 };
 
 export default gameProgression;

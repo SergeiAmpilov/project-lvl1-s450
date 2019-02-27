@@ -1,6 +1,6 @@
 {
   "name": "braingamesasy",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -44,7 +44,6 @@
     "eslint-plugin-react": "^7.12.4"
   },
   "dependencies": {
-    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   }
 }

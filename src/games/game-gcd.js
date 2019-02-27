@@ -1,4 +1,4 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+
 import gameIterator from '../common';
 import getRandom from '../utils';
 
@@ -14,13 +14,11 @@ const gcd = (n1, n2) => {
 };
 
 const gameGcd = () => {
-  const greetingText = 'Find the greatest common divisor of given numbers.';
+  const description = 'Find the greatest common divisor of given numbers.';
   const gameGenerator = () => {
-    const randomValue = cons(getRandom(), getRandom());
+    const n1 = getRandom();
+    const n2 = getRandom();
     return (param) => {
-      const n1 = car(randomValue);
-      const n2 = cdr(randomValue);
-
       if (param === 'rightAnswer') {
         return String(gcd(n1, n2));
       }
@@ -33,7 +31,7 @@ const gameGcd = () => {
     };
   };
 
-  gameIterator(gameGenerator, greetingText);
+  gameIterator(gameGenerator, description);
 };
 
 export default gameGcd;

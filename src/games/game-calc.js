@@ -1,42 +1,44 @@
-import { cons, car, cdr } from 'hexlet-pairs';
 import gameIterator from '../common';
 import getRandom from '../utils';
 
 const getRandomOperator = () => {
-  const r = getRandom();
-
-  if (r <= 33) {
-    return '+';
+  const optionOfOperation = getRandom(1, 4);
+  switch (optionOfOperation) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
+    default:
+      return '*';
   }
+};
 
-  if (r <= 67) {
-    return '-';
+const calculate = (operator, number1, number2) => {
+  switch (operator) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      return 0;
   }
-
-  return '*';
 };
 
 const calcGame = () => {
-  const greetingText = 'What is the result of the expression?';
+  const description = 'What is the result of the expression?';
 
   const gameGenerator = () => {
-    const randomValue = cons(getRandomOperator(), cons(getRandom(), getRandom()));
-    const operator = car(randomValue);
-    const n1 = car(cdr(randomValue));
-    const n2 = cdr(cdr(randomValue));
+    const operator = getRandomOperator();
+    const n1 = getRandom();
+    const n2 = getRandom();
 
     return (param) => {
       if (param === 'rightAnswer') {
-        switch (operator) {
-          case '+':
-            return String(n1 + n2);
-          case '-':
-            return String(n1 - n2);
-          case '*':
-            return String(n1 * n2);
-          default:
-            return 0;
-        }
+        return String(calculate(operator, n1, n2));
       }
 
       if (param === 'question') {
@@ -47,7 +49,7 @@ const calcGame = () => {
     };
   };
 
-  gameIterator(gameGenerator, greetingText);
+  gameIterator(gameGenerator, description);
 };
 
 export default calcGame;
