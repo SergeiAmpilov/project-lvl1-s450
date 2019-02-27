@@ -17,34 +17,36 @@ const getRandomOperator = () => {
 
 const calcGame = () => {
   const greetingText = 'What is the result of the expression?';
-  const paramGenerator = () => cons(getRandomOperator(), cons(getRandom100(), getRandom100()));
 
-  const gameConditionGenerator = val => (param) => {
-    const operator = car(val);
-    const n1 = car(cdr(val));
-    const n2 = cdr(cdr(val));
+  const gameGenerator = () => {
+    const randomValue = cons(getRandomOperator(), cons(getRandom100(), getRandom100()));
+    const operator = car(randomValue);
+    const n1 = car(cdr(randomValue));
+    const n2 = cdr(cdr(randomValue));
 
-    if (param === 'rightAnswer') {
-      switch (operator) {
-        case '+':
-          return String(n1 + n2);
-        case '-':
-          return String(n1 - n2);
-        case '*':
-          return String(n1 * n2);
-        default:
-          return 0;
+    return (param) => {
+      if (param === 'rightAnswer') {
+        switch (operator) {
+          case '+':
+            return String(n1 + n2);
+          case '-':
+            return String(n1 - n2);
+          case '*':
+            return String(n1 * n2);
+          default:
+            return 0;
+        }
       }
-    }
 
-    if (param === 'question') {
-      return `${n1} ${operator} ${n2}`;
-    }
+      if (param === 'question') {
+        return `${n1} ${operator} ${n2}`;
+      }
 
-    return 'unknown call of function';
+      return 'unknown call of function';
+    };
   };
 
-  gameIteratorNew(paramGenerator, gameConditionGenerator, greetingText);
+  gameIteratorNew(gameGenerator, greetingText);
 };
 
 export default calcGame;

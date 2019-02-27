@@ -12,12 +12,11 @@ const getGreetingAndName = (greetingText = '') => {
   return name;
 };
 
-const gameIteratorNew = (paramGenerator, gameGenerator, greetingText) => {
+const gameIteratorNew = (gameGenerator, greetingText) => {
   const name = getGreetingAndName(greetingText);
 
   for (let i = 0; i < roundCountCommon; i += 1) {
-    const param = paramGenerator();
-    const game = gameGenerator(param);
+    const game = gameGenerator();
     const rightAnswerText = game('rightAnswer');
     const questionText = game('question');
 
@@ -35,5 +34,5 @@ const gameIteratorNew = (paramGenerator, gameGenerator, greetingText) => {
 };
 
 export {
-  getGreetingAndName, roundCountCommon, gameIteratorNew, getRandom100,
+  getGreetingAndName, gameIteratorNew, getRandom100,
 };
