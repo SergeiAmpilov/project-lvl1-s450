@@ -16,3 +16,6 @@
 
 <h4>Игра GCD</h4>
 <a href="https://asciinema.org/a/gJ2xfbHr7rg5lSu53EBotzCH9" target="_blank"><img src="https://asciinema.org/a/gJ2xfbHr7rg5lSu53EBotzCH9.svg" /></a>
+
+<h4>Игра Progression</h4>
+<a href="https://asciinema.org/a/cYLUELnZyuyl56cM0T03hLzaf" target="_blank"><img src="https://asciinema.org/a/cYLUELnZyuyl56cM0T03hLzaf.svg" /></a>
