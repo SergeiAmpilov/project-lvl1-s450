@@ -19,15 +19,14 @@ const gameGcd = () => {
     const n1 = getRandom();
     const n2 = getRandom();
     return (param) => {
-      if (param === 'rightAnswer') {
-        return String(gcd(n1, n2));
+      switch (param) {
+        case 'question':
+          return `${n1} ${n2}`;
+        case 'rightAnswer':
+          return String(gcd(n1, n2));
+        default:
+          return 'unknown call of function';
       }
-
-      if (param === 'question') {
-        return `${n1} ${n2}`;
-      }
-
-      return 'unknown call of function';
     };
   };
 

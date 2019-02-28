@@ -15,18 +15,18 @@ const getStringWithHiddenNomber = (items, hiddenNomberIndex) => items.map((item,
 const gameProgression = () => {
   const description = 'What number is missing in the progression?';
 
+  const sizeOfProgression = 10;
   const gameGenerator = () => {
     const startProgressionNomber = getRandom(1, 5);
     const stepOfProgression = getRandom(1, 5);
-    const sizeOfProgression = 10;
 
     const progressionItems = getProgression(startProgressionNomber,
       stepOfProgression, sizeOfProgression);
 
-    const hiddenNomberIndex = getRandom(0, sizeOfProgression - 1);
+    const hiddenNumberIndex = getRandom(0, sizeOfProgression - 1);
 
-    const rightAnswer = progressionItems[hiddenNomberIndex];
-    const question = getStringWithHiddenNomber(progressionItems, hiddenNomberIndex);
+    const rightAnswer = progressionItems[hiddenNumberIndex];
+    const question = getStringWithHiddenNomber(progressionItems, hiddenNumberIndex);
 
     return (param) => {
       switch (param) {
@@ -39,7 +39,6 @@ const gameProgression = () => {
       }
     };
   };
-
 
   gameIterator(gameGenerator, description);
 };
